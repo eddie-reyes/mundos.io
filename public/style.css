@@ -1,0 +1,442 @@
+
+html, body {
+ overflow: hidden
+}
+
+#mg {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -230px);
+  z-index: -1;
+
+}
+
+#mg_p {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -230px);
+  z-index: -1;
+
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.game_font {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif ;
+  text-align: center;
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 0;
+}
+
+.loading_screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 2;
+}
+
+.gif {
+  position: fixed;
+  left: 705px;
+  top: 100px;
+}
+
+.logo {
+  top: 60px;
+}
+
+.menu_bottom {
+  bottom: 0;
+}
+
+.menu_br {
+
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin-right: 20px;
+  opacity: 0.5;
+
+}
+
+.menu_tr {
+
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  margin-right: 20px;
+  margin-top: 20px;
+  opacity: 0.5;
+  font-size: 125%;
+  text-align: right;
+
+}
+
+.menu_tl {
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  margin-left: 20px;
+  margin-top: 20px;
+  opacity: 0.5;
+  font-size: 150%;
+
+}
+
+.button {
+  width: 100px;
+  border: none;
+  background: none;
+  z-index: 1;
+}
+
+.button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.input_user {
+  width: 250px;
+  bottom: 35px;
+  right: 135px;
+  height: 40px;
+  resize: none;
+  font-size: x-large;
+  z-index: 1;
+}
+
+.htp {
+
+  transition: 1s;
+
+}
+
+.htp:hover {
+
+  transform: translate(0, -390px);
+  
+}
+
+.bg {
+
+  opacity: 0.8;
+  border-radius: 10px;
+  background-color: black;
+
+}
+
+.leaderboard {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.lb_bg {
+
+  width: 255px;
+  height: 400px;
+
+}
+
+.lb_list {
+  position: absolute;
+  top: 50px;
+  right: 45px;
+  column-width: 165px;
+  text-align: left;
+  font-size: x-large;
+}
+
+
+.lb_header {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  font-size: xx-large;
+}
+
+.lb_top {
+  position: absolute;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: -2px;
+  top: 43px;
+  right: 245px;
+  text-shadow: 2px 2px black;
+
+}
+
+.score {
+  position: fixed;
+  line-height: 20px;
+  bottom: 0px;
+  left: 0px;
+  margin-left: 45px;
+  margin-bottom: 20px;
+}
+
+
+.s_bg {
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width : 150px;
+  height : 110px;
+  z-index: -1;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.boost_bar {
+  border-radius: 5px;
+  height: 10px;
+  width: 0px;
+  background-image:linear-gradient(salmon, darkred);
+}
+
+.PU {
+
+  animation-name: PUMove, PUMove;
+  animation-duration: 1s, 1s;
+  animation-delay: 0s, 3s;
+  animation-direction: normal, reverse;
+
+}
+
+
+@keyframes MGGrow {
+
+  from { font-size: 0% };
+  to { font-size: 100% };
+}
+
+@keyframes MGFade {
+
+  from { opacity : 1 }
+  to { opacity: 0 }
+
+}
+
+@keyframes MGMove {
+
+  from { transform: translate(-50%, -100px)}
+  to { transform: translate(-50%, -300px)}
+
+}
+
+@keyframes PUMove {
+
+  from { top : -100px }
+  to { top : 30px }
+
+}
+
+@keyframes DBMove {
+
+  from { bottom : -200px}
+  to { bottom : 50px}
+
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f2ffab, 0 0 40px #f2ffab, 0 0 50px #f2ffab, 0 0 60px #f2ffab, 0 0 70px #f2ffab, 0 0 80px #f2ffab;
+  }
+}
+
+.b_bg {
+
+  width: 750px;
+  height: 530px;
+
+}
+
+.mg_bg {
+  
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+}
+
+.mg_frame {
+
+  transform: translate(-50%, -230px);
+
+}
+
+.battle_top {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 250%;
+  font-style: italic;
+  transform: translate(-50%, -500%);
+}
+
+
+.battle_bottom_middle {
+  
+  font-size: xx-large;
+  transform: translate(-50%, 80px);
+  z-index: 2;
+
+}
+
+.battle_g {
+  transform: translate(-50%, -40px);
+  animation-name: MGGrow;
+  animation-duration: 1s;
+}
+
+.battle_s {
+  color: yellow;
+  font-style: normal;
+}  
+
+.battle_e {
+
+  transform: translate(-50%, 130px);
+
+}
+
+.play_button {
+
+  bottom: 29px;
+  left: 310px;
+
+}
+
+.e_chance {
+
+  font-size: x-large;
+  transform: translate(-50%, 170px);
+
+}
+
+.e_failed {
+
+  font-size: x-large;
+  color: red;
+  transform: translate(-50%, 130px);
+  animation-name: MGFade;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+.battle_timer_top {
+
+  transform: translate(-50%, -470px);
+
+}
+
+.battle_timer_h {
+
+  transform: translate(-50%, 160px);
+
+}
+
+.battle_timer_b {
+
+  border-radius: 5px;
+  height: 10px;
+  width: 700px;
+  background-color: white;
+  transform: translate(-50%, 220px);
+
+}
+
+.mass_change {
+
+  text-shadow: 2px 2px 4px #000000;
+  animation-name: MGMove, MGFade;
+  animation-duration: 2s, 1s;
+  animation-delay: 0s, 1s;
+
+}
+
+.debrief {
+
+  bottom: 50px;
+  animation-name: DBMove, DBMove;
+  animation-duration: 1s, 1s;
+  animation-delay: 0s, 3s;
+  animation-direction: normal, reverse;
+  font-size: 75%;
+  line-height: 25px;
+
+}
+
+.win {
+
+  color: white;
+  bottom: 100px;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-size: 200%;
+  background: url(../client/UI/win_frame.png);
+  width: 1000px;
+  height: 175px;
+}
+
+.d_bg {
+
+  width: 350px;
+  height: 100px;
+  z-index: -1;
+
+}
+
+.d_h {
+
+  bottom: 60px;
+
+}
+
+.d_s {
+
+  bottom: 0px;
+
+}
+
+.rt_button {
+
+  width: 128px;
+  height: 128px;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  z-index: 1;
+
+}
