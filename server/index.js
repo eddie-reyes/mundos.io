@@ -73,10 +73,10 @@ io.on("connection", (socket) => {
 
     //set initial data
     persistant_data.set(socket.id, {position: null, rotation: null});
-    player_data.set(socket.id, {mass: 1, username: 'Mundos Player', inBattle: false, PU1 : false});
+    player_data.set(socket.id, {mass: 1, username: 'Mundos Player', isPlaying : false, inBattle: false, PU1 : false});
 
     //set initial state for connecting socket
-    io.to(socket.id).emit("init_state", Array.from(persistant_data.keys()), Array.from(food_data.entries()), Array.from(player_data.entries()));
+    io.to(socket.id).emit("init_state", Array.from(food_data.entries()), Array.from(player_data.entries()));
     
     console.log(`connected players: ${io.sockets.sockets.size}`);
     
@@ -137,6 +137,7 @@ io.on("connection", (socket) => {
     socket.on("update_username", (username) => {
 
         player_data.get(socket.id).username = username;
+        player_data.get(socket.id).isPlaying = true;
         socket.broadcast.emit("retrieve_username", socket.id, username);
 
     })
@@ -308,7 +309,7 @@ io.on("connection", (socket) => {
     })
 })
 
-server.listen(3000, () => {
+server.listen(5555, () => {
 
     console.log('server is running');
     
@@ -403,7 +404,9 @@ function resetGame() {
 
         let username = player_data.get(key).username;
 
-        player_data.set(key, {mass: 1, username: username, inBattle: false, PU1 : false});
+        let isPlaying = player_data.get(key).isPlaying;
+
+        player_data.set(key, {mass: 1, username: username, isPlaying : isPlaying, inBattle: false, PU1 : false});
 
     })
 
