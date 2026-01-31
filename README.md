@@ -40,6 +40,6 @@ Core gameplay pillars:
 - Designed for low-latency interactions and scalability
 
 ---
-
+## Preview
 ![mundos-d0fd499b](https://github.com/user-attachments/assets/fbf6766d-f81e-4e27-a30f-407ccca3423f)
 
